@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RateSentinel Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="layout">
+
+    <header>
+      <div class="header-left">
+        <div id="status-dot"></div>
+        <h1>RateSentinel</h1>
+        <span class="version">v1.0</span>
+      </div>
+      <span id="status-text">Connecting...</span>
+    </header>
+
+    <!-- Stat cards -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="label">Total Requests</div>
+        <div class="value" id="total-count">0</div>
+      </div>
+      <div class="stat-card allowed">
+        <div class="label">Allowed</div>
+        <div class="value" id="allowed-count">0</div>
+      </div>
+      <div class="stat-card blocked">
+        <div class="label">Blocked</div>
+        <div class="value" id="blocked-count">0</div>
+      </div>
+      <div class="stat-card rate">
+        <div class="label">Block Rate</div>
+        <div class="value" id="block-rate">0%</div>
+      </div>
+    </div>
+
+    <!-- Charts row -->
+    <div class="charts-row">
+      <div class="chart-card sparkline-card">
+        <div class="chart-title">Requests Over Time <span class="chart-sub">(last 30 events)</span></div>
+        <canvas id="sparkline-canvas" height="80"></canvas>
+      </div>
+      <div class="chart-card donut-card">
+        <div class="chart-title">Allow / Block Ratio</div>
+        <div class="donut-wrap">
+          <canvas id="donut-canvas" width="120" height="120"></canvas>
+          <div class="donut-legend">
+            <div class="legend-item"><span class="dot green"></span> Allowed</div>
+            <div class="legend-item"><span class="dot red"></span> Blocked</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom row: table + activity feed -->
+    <div class="bottom-row">
+
+      <div class="table-card">
+        <div class="chart-title">API Keys</div>
+        <div id="empty-state">No requests yet. Hit a test route to see live data.</div>
+        <table id="main-table" style="display:none">
+          <thead>
+            <tr>
+              <th>API Key</th>
+              <th>Algorithm</th>
+              <th>Allowed</th>
+              <th>Blocked</th>
+              <th>Last Status</th>
+              <th>Last Seen</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="feed-card">
+        <div class="chart-title">Live Activity <span class="chart-sub">(latest first)</span></div>
+        <ul id="activity-feed"></ul>
+      </div>
+
+    </div>
+
+  </div>
+  
+<script src="dashboard.js"></script>
+
+</body>
+</html>
