@@ -20,7 +20,7 @@ Built as a learning project by a 2nd year CSE student at NIT Silchar — every l
 
 ## Live Demo
 
-🔗 **[ratesentinel.up.railway.app](https://ratesentinel.up.railway.app)** ← dashboard opens here
+🔗 **[ratesentinel.onrender.com/](https://ratesentinel.onrender.com/)** ← dashboard opens here
 
 ---
 
