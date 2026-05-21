@@ -277,6 +277,3 @@ All data updates in real time as requests hit the rate limiter.
 
 ---
 
-## License
-
-MIT

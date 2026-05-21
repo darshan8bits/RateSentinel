@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev" : "node src/app.js",
-    "migrate": "node src/db/migrate.js"
+    "dev": "node src/app.js",
+    "migrate": "node src/db/migrate.js",
+    "test": "node -e \"require('./src/middleware/rateLimiter'); require('./src/controllers/authController'); require('./src/controllers/apiKeyController'); require('./src/controllers/rateLimitController'); console.log('All modules loaded successfully');\""
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "express": "^5.2.1",
     "ioredis": "^5.10.0",
     "jsonwebtoken": "^9.0.3",
-    "pg": "^8.20.0"
+    "pg": "^8.20.0",
+    "ws": "^8.20.1"
   }
 }
