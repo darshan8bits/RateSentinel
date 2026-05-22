@@ -53,7 +53,7 @@ Built as a learning project by a 2nd year CSE student at NIT Silchar — every l
 | Cache / Counters | Redis (via `ioredis`) |
 | Auth | JWT (`jsonwebtoken`) + bcrypt |
 | Real-time | WebSocket (`ws`) |
-| Deployment | Railway |
+| Deployment | Render |
 
 ---
 
@@ -61,6 +61,9 @@ Built as a learning project by a 2nd year CSE student at NIT Silchar — every l
 
 ```
 RateSentinel/
+├── .github/
+    ├── workflows/
+        ├── ci.yml                  # Contains ci workflow for auto deploy on push
 ├── src/
 │   ├── app.js                      # Express app + WebSocket server
 │   ├── routes/
@@ -267,13 +270,5 @@ All data updates in real time as requests hit the rate limiter.
 
 ---
 
-## Roadmap
 
-- [ ] Docker + docker-compose setup
-- [ ] GitHub Actions CI/CD pipeline
-- [ ] Demo frontend (no Postman needed)
-- [ ] Rate limit analytics (graphs over time)
-- [ ] Admin panel to manage all keys and rules
-
----
 
